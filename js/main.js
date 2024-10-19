@@ -53,3 +53,9 @@ function createProduct(data){
         wrapper.appendChild(card);  
     });
 }
+wrapper.addEventListener("click", (e) => {
+    if (e.target.classList.contains("card_img")) {
+        let id = e.target.closest(".card").dataset.id;
+        open(`/pages/about.html?q=${id}`, "_self")
+    }
+});
